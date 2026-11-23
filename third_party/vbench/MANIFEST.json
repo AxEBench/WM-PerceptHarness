@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "package": "vbench-0.1.5",
+  "loading": "Runners extract the hash-checked bundled wheel and import VBench from it; no pip installation is used.",
+  "metrics": {
+    "dynamic_degree": {
+      "metric": "dynamic_degree",
+      "entrypoint": "run_dynamic_degree.py",
+      "official_source": {
+        "distribution": "vbench",
+        "version": "0.1.5",
+        "archive": "official/distributions/vbench-0.1.5-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/06/82/13e401ec97d2686397201dfe74e2dda88b3695192de1b25a5ab267ab8960/vbench-0.1.5-py3-none-any.whl",
+        "sha256": "13266ed4715d91a7669ab58484b9e010bc91bb96e129d414fb512d4937890023",
+        "extracted_source": "official/pypi/vbench/dynamic_degree.py",
+        "license": "official/pypi/vbench-0.1.5.dist-info/LICENSE",
+        "dependency_metadata": "official/pypi/vbench-0.1.5.dist-info/METADATA"
+      },
+      "current_source": "modified/vbench/dynamic_degree.py",
+      "modification": "Input frame tensors remain in CPU memory; current inference pair is transferred to GPU. Sampling and score formulas unchanged.",
+      "device_argument": "torch.device('cuda'), matching official CLI",
+      "modes": [
+        "official",
+        "cpu-staging"
+      ],
+      "checkpoint": {
+        "cache_relative_path": "raft_model/models/raft-things.pth",
+        "sha256": "fcfa4125d6418f4de95d84aec20a3c5f4e205101715a79f193243c186ac9a7e1",
+        "included": false
+      },
+      "manifest_self_hash_excluded": true
+    },
+    "motion_smoothness": {
+      "metric": "motion_smoothness",
+      "entrypoint": "run_motion_smoothness.py",
+      "official_source": {
+        "distribution": "vbench",
+        "version": "0.1.5",
+        "archive": "official/distributions/vbench-0.1.5-py3-none-any.whl",
+        "url": "https://files.pythonhosted.org/packages/06/82/13e401ec97d2686397201dfe74e2dda88b3695192de1b25a5ab267ab8960/vbench-0.1.5-py3-none-any.whl",
+        "sha256": "13266ed4715d91a7669ab58484b9e010bc91bb96e129d414fb512d4937890023",
+        "extracted_source": "official/pypi/vbench/motion_smoothness.py",
+        "license": "official/pypi/vbench-0.1.5.dist-info/LICENSE",
+        "dependency_metadata": "official/pypi/vbench-0.1.5.dist-info/METADATA",
+        "config": "official/pypi/vbench/third_party/amt/cfgs/AMT-S.yaml"
+      },
+      "current_source": "modified/vbench/motion_smoothness.py",
+      "modification": "Input frame tensors remain in CPU memory; current inference pair is transferred to GPU. Sampling and score formulas unchanged.",
+      "device_argument": "torch.device('cuda'), matching official CLI",
+      "modes": [
+        "official",
+        "cpu-staging"
+      ],
+      "checkpoint": {
+        "cache_relative_path": "amt_model/amt-s.pth",
+        "sha256": "07e7e03405c213fe4405678db9b42d05671e48c56faf6a441b99bb0047d3cf77",
+        "included": false
+      },
+      "manifest_self_hash_excluded": true,
+      "numerical_caveat": "Padding and conditional inconsistent-frame resize execute on CPU in staging mode; CPU/GPU bilinear results are not guaranteed bitwise equal."
+    }
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "ee0ca624ca7ce21d8765cf623f11946219fc5e4ee60f791765b1a790f9e81efb",
+      "bytes": 3350
+    },
+    {
+      "path": "modified/vbench/dynamic_degree.py",
+      "sha256": "601591e8f65819dd147f0b025da5b76f66fa130442288179fef3b00b107a85b7",
+      "bytes": 5580
+    },
+    {
+      "path": "modified/vbench/motion_smoothness.py",
+      "sha256": "9e792f051e7d9c00ffe95541a0e28c75ecca7c00bd4992e47554172e52dd5fd8",
+      "bytes": 7069
+    },
+    {
+      "path": "official/distributions/vbench-0.1.5-py3-none-any.whl",
+      "sha256": "13266ed4715d91a7669ab58484b9e010bc91bb96e129d414fb512d4937890023",
+      "bytes": 438735
+    },
+    {
+      "path": "official/pypi/vbench-0.1.5.dist-info/LICENSE",
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "bytes": 11356
+    },
+    {
+      "path": "official/pypi/vbench-0.1.5.dist-info/METADATA",
+      "sha256": "e722e5715633fbb910191843a35d97a469ba34f721cfdc61535cfc778f6cc2d2",
+      "bytes": 6372
+    },
+    {
+      "path": "official/pypi/vbench/dynamic_degree.py",
+      "sha256": "2e93d3a7af38bfbe459c19c9d127894f687424a0bc534dbf7e6571d17b24dff7",
+      "bytes": 5516
+    },
+    {
+      "path": "official/pypi/vbench/motion_smoothness.py",
+      "sha256": "082ddac8df7962d3a8b23bb999614fae6f3c9c93ebab9fb5c06b09588f109c94",
+      "bytes": 7085
+    },
+    {
+      "path": "official/pypi/vbench/third_party/amt/cfgs/AMT-S.yaml",
+      "sha256": "a77746791b1d02c839f40791fb82adb28c5058cf3735b2657a4a965a789ce0a8",
+      "bytes": 1128
+    },
+    {
+      "path": "run_dynamic_degree.py",
+      "sha256": "0eef4aba5bccd6bf4a1c2e0d290c0a9cbff7f2a4372a0a5a18ad96a00da0a6bd",
+      "bytes": 5913
+    },
+    {
+      "path": "run_motion_smoothness.py",
+      "sha256": "b57f9ddf65f4e1db6ec05d87bd7d98bbd3badbfd695eab89e5bdfa8c0c2d7563",
+      "bytes": 6001
+    }
+  ]
+}

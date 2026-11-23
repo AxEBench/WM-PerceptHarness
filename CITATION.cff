@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below. The paper citation will be added on publication."
+title: "WM-PerceptHarness: Grounded Event Evaluation for World-Model Videos"
+authors:
+  - name: "WM-PerceptHarness contributors"
+license: MIT
+repository-code: "https://github.com/AxEBench/WM-PerceptHarness"
+version: 0.2.0
+date-released: 2026-11-21

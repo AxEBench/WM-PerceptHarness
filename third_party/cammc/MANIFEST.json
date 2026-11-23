@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "package": "cammc",
+  "metric": "cammc",
+  "entrypoint": "run_one.py",
+  "direction": "lower_is_better",
+  "protocol": {
+    "fps": 12,
+    "tracking": "WorldScore-pinned DROID-SLAM, WorldScore settings, buffer sized to frame count, whole sequence, no resets, seed 20261112",
+    "score": "mean over frames of the Frobenius norm of the 3x4 [R|t] difference after first-camera alignment and independent max-distance translation normalization (+1e-9); no scale, rotation or time fit"
+  },
+  "formula_source": {
+    "repository": "https://github.com/ZGCTroy/CamI2V",
+    "path": "evaluation/glomap_evaluation.py",
+    "revision": "2d6644c05749131d7617b27101a9cbfe75ca8c92",
+    "license": "MIT",
+    "included": false,
+    "changes": "per-frame values averaged instead of summed; DROID-SLAM instead of GLOMAP"
+  },
+  "external": {
+    "worldscore": {
+      "repository": "https://github.com/haoyi-duan/WorldScore",
+      "revision": "096c75fc4ada9c7d92e03140c3c1f0c8f383b61f",
+      "license": "MIT",
+      "path": "worldscore/benchmark/metrics/third_party/droid_slam",
+      "included": false
+    },
+    "droid_slam": {
+      "repository": "https://github.com/princeton-vl/DROID-SLAM",
+      "revision": "8016d2b9b72b101a3e9ac804ebf20b4c654dc291",
+      "license": "BSD-3-Clause",
+      "weights": "droid.pth",
+      "included": false
+    }
+  },
+  "paper_run_code_sha256": {
+    "note": "Original single-file scripts of the paper's runs; metric.py and adapter.py here are reformatted with numerically identical results (adapter.py drops the unused WorldScore normalize_score), and run_one.py takes command-line inputs instead of a job list.",
+    "metric.py": "46e40b5d2a130a1eabd0a749403a32df55a274a8c5a835e6512cbca975b8386d",
+    "adapter.py": "6f5d7380a5ee747ee57f69aba93d3324e9182fbaf825ada4c4d6d012e662b460",
+    "run_one.py": "a916663b2a5fa79e74a7e4e4787af62ce3896f9f389016160271d48f3c1f0a60"
+  },
+  "manifest_self_hash_excluded": true,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "d7c7710a194ad1ef1300df788a58f79e83a93907027b20054bce1a2eb0fb82f3",
+      "bytes": 5746
+    },
+    {
+      "path": "adapter.py",
+      "sha256": "4b2d88b1935bdd4a919e6cc4d8b370ab6f4b12c8585d0a204a9622d4f6aa46f1",
+      "bytes": 1182
+    },
+    {
+      "path": "metric.py",
+      "sha256": "7840883a9fa1e644ce4473596d738f1fbba749e0f901a5f84d1363671456fde7",
+      "bytes": 1513
+    },
+    {
+      "path": "run_one.py",
+      "sha256": "338074906df843311ac592d9dc5e00bde366be07f90495a521ff20fbb66b65ba",
+      "bytes": 17009
+    }
+  ]
+}
